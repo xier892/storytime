@@ -1,0 +1,340 @@
+@font-face {
+  font-family: "HelveticaNeue";
+  font-weight: 400;
+  src: url("../fonts/HelveticaNeue.ttf") format("truetype"),
+  url("../fonts/HelveticaNeueLTStd-Roman.otf") format("opentype"),
+  url("../fonts/HelveticaNeue.woff") format("woff"),
+  url("../fonts/HelveticaNeue.eot");
+}
+@font-face {
+  font-family: "HelveticaNeue";
+  font-weight: 400;
+  font-style: italic;
+  src: url("../fonts/helveticaneue-italic.ttf") format("truetype"),
+  url("../fonts/HelveticaNeue-Italic.eot");
+}
+@font-face {
+  font-family: "HelveticaNeue";
+  font-weight: 700;
+  src: url("../fonts/HelveticaNeue-Bold.ttf") format("truetype"),
+  url("../fonts/HelveticaNeue-Bold.woff") format("woff"),
+  url("../fonts/HelveticaNeue-Bold.eot");
+}
+@font-face {
+  font-family: "HelveticaNeue";
+  font-weight: 700;
+  font-style: italic;
+  src: url("../fonts/HelveticaNeue-BoldItalic.ttf") format("truetype"),
+  url("../fonts/HelveticaNeue-BoldItalic.eot");
+}
+@font-face {
+  font-family: "HelveticaNeue";
+  font-weight: 900;
+  src: url("../fonts/HelveticaNeueLT-Black.ttf") format("truetype"),
+  url("../fonts/HelveticaNeueLT-Black.woff") format("woff"),
+  url("../fonts/HelveticaNeueLT-Black.eot");
+}
+
+body {
+  display: table;
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+  font-family: "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:visited {
+  color: inherit;
+}
+h1 {
+  font-weight: 700;
+}
+h3 {
+  font-weight: 400;
+}
+.introduction {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.introduction-wrapper {
+  display: flex;
+  background-image: url(../images/bg2.jpg);
+  background-size: cover;
+  font-size: 26px;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+.introtext {
+  color: #fff;
+  overflow-y: hidden;
+  align-self: center;
+  max-height: 70%;
+  margin: 20% 25% 20%;
+}
+.introtext h2 {
+  letter-spacing: 2px;
+  margin: 0;
+}
+.introtext p {
+  display: none;
+  line-height: 1.5;
+}
+.triangle {
+  display: inline-block;
+  margin-left: 12px;
+  font-size: 20px;
+  animation: 1s infinite alternate bounce;
+}
+.done .triangle {
+  display: none;
+}
+
+.penis {
+  color: rgba(0, 0, 0, 0);
+}
+.penis:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 15%;
+}
+.hidden {
+  display: none;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 25px;
+  margin: 25px;
+  width: 300px;
+  height: 150px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+.story {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-content: space-between;
+  font-size: 26px;
+  margin: auto;
+  line-height: 1.5;
+  box-sizing: border-box;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 95%;
+  height: 95%;
+  z-index: 10;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.closeButton {
+  display: flex;
+  flex: 0;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  margin: 1%;
+  background-color: #000;
+  color: #fff;
+  width: 99%;
+  min-height: 60px;
+  transition: all 0.05s ease-in-out;
+  order: 2;
+}
+.closeButton:hover {
+  opacity: 0.75;
+}
+.closeButton::after {
+  content: "Proceed";
+}
+.text {
+  display: flex;
+  flex-flow: column;
+  overflow-y: auto;
+  justify-content: flex-start;
+  align-content: center;
+  padding: 6% 25% 7%;
+  /* margin: 6% auto; */
+  flex: 1 0 1;
+  order: 1;
+}
+.plus {
+  background: #fff;
+  font-weight: 900;
+  font-size: 72px;
+  transition: box-shadow 0.1s ease-in-out;
+}
+.plus:hover, .pending:hover {
+  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.6);
+}
+.plus::after {
+  content: "+";
+}
+
+.verticalDecision {
+  background: none;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: none;
+  transition: all 0.1s ease-in-out;
+}
+.horizontalDecision {
+  background: none;
+  flex-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: none;
+  transition: all 0.1s ease-in-out;
+}
+.choiceText {
+  display: inline-block;
+  padding: 12px;
+}
+.choiceText:not(.selected)::before {
+  content: '';
+  transform: translateY(35px);
+  display: block;
+  height: 6px;
+  width: 0;
+  background: transparent;
+  transition: width .15s ease-in-out, background-color .5s ease-in-out;
+  margin:auto;
+}
+.choiceText:hover:not(.selected)::before {
+  width: 100%;
+  background: #000;
+}
+.filler {
+  visibility: hidden;
+}
+.pending {
+  background: #fff;
+}
+.pending::after {
+  content: attr(data-summary);
+}
+.selected {
+  background: #000;
+  color: #e9d69f;
+}
+.decided {
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+.selected::after {
+  content: attr(data-summary);
+}
+.wife {
+  background-color: #e9d69f;
+}
+.wife::after {
+  content: "Sy Ableman fucks Larry's wife";
+}
+
+.apocalypse {
+  background-color: #e9d69f;
+}
+.apocalypse:hover {
+  box-shadow: 0 0 15px rgba(233, 214, 200, 0.9);
+}
+.endQuote {
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  align-items: baseline;
+  align-content: center;
+  color: #fff;
+  margin: auto;
+  line-height: 1.5;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.downTriangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 13.0px 7.5px 0 7.5px;
+  border-color: #000000 transparent transparent transparent;
+  margin-bottom: 25px;
+  animation: 0.5s infinite alternate bounce;
+}
+.rightTriangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7.5px 0 7.5px 13.0px;
+  border-color: transparent transparent transparent #000000;
+  margin-right: 25px;
+  animation: 0.5s infinite alternate wiggle;
+}
+.leftTriangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7.5px 13.0px 7.5px 0;
+  border-color: transparent #000000 transparent transparent;
+  margin-left: 25px;
+  animation: 0.5s infinite alternate wiggle;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(-1px);
+  } to {
+    transform: translateY(4px);
+  }
+}
+@keyframes wiggle {
+  from {
+    transform: translateX(-1px);
+  } to {
+    transform: translateX(4px);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .z, .b, .c, .d {
+    display: none;
+  }
+  .introtext {
+    overflow-y: auto;
+    max-height: 90%;
+    margin: 10%;
+  }
+  .text {
+    padding: 3% 10% 7%;
+  }
+}
